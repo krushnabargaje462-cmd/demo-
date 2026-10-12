@@ -1,0 +1,1 @@
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.chart-card{height:340px}.chart-card canvas{width:100%!important;height:270px!important}@media(max-width:800px){.chart-grid{grid-template-columns:1fr}.chart-card{height:300px}.chart-card canvas{height:235px!important}}

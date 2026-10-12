@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mission Titan | Digital Twin</title>
+<link rel="stylesheet" href="common.css"><link rel="stylesheet" href="navbar.css"><link rel="stylesheet" href="twin-v2.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<nav class="navbar">
+<div class="logo"><span class="logo-icon">🔋</span><div class="logo-text"><h2>MISSION TITAN</h2><p>AI Powered Battery Intelligence</p></div></div>
+<ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="battery.html">Battery</a></li><li><a class="active" href="twin.html">Digital Twin</a></li><li><a href="analytics.html">Analytics</a></li><li><a href="passport.html">Passport</a></li><li><a href="about.html">About</a></li></ul>
+<div class="live-clock"><span class="clock-icon">◷</span><div class="clock-info"><span class="clock-label">LIVE TIME</span><span id="clock">--:--:--</span></div></div>
+</nav>
+
+<main class="page">
+<div class="page-title">
+<div><h1>Digital Twin</h1><p>Simple view of the physical battery condition — rotate, inspect and understand.</p></div>
+<span id="twinStatus" class="status-dot waiting">Connecting</span>
+</div>
+
+<section class="twin-hero">
+  <div class="twin-3d-card card">
+    <div class="twin-toolbar">
+      <div><span class="eyebrow">LIVE BATTERY TWIN</span><h2>4S LiFePO₄ Pack</h2></div>
+      <div class="motion-state" id="motionState"><span class="motion-dot"></span><b>IDLE</b></div>
+    </div>
+    <div class="flow-strip">
+      <span>PACK</span><span id="flowArrow">→</span><span id="flowText">IDLE</span><span>LOAD / CHARGER</span>
+    </div>
+    <div id="twin3d" class="twin3d"></div>
+    <div class="twin-help">Drag to rotate • Scroll to zoom • Click a cell to inspect</div>
+  </div>
+
+  <aside class="twin-summary">
+    <div class="card live-summary">
+      <div class="section-title">Live Twin State</div>
+      <div class="mini-row"><span>Pack Voltage</span><strong id="voltage">--</strong></div>
+      <div class="mini-row"><span>Current</span><strong id="current">--</strong></div>
+      <div class="mini-row"><span>Power</span><strong id="power">--</strong></div>
+      <div class="mini-row"><span>SOC</span><strong id="soc">--</strong></div>
+      <div class="mini-row"><span>Battery Temp</span><strong id="temp">--</strong></div>
+      <div class="soc-wrap"><div class="soc-track"><div id="socFill" class="soc-fill"></div></div><span id="socLabel">--</span></div>
+    </div>
+
+    <div class="card cell-detail">
+      <div class="section-title">Selected Cell</div>
+      <div id="selectedCell">Click a cell in the twin.</div>
+      <div id="selectedParams" class="selected-params"></div>
+    </div>
+  </aside>
+</section>
+
+<section class="section twin-modules">
+  <div class="module card">
+    <div class="module-head"><span class="module-icon">❤️</span><div><h2>Cell Health</h2><p>Live condition indicator, not final SOH.</p></div></div>
+    <div class="health-grid">
+      <div class="health-score"><strong id="healthScore">--</strong><span>Condition Index</span></div>
+      <div><div id="healthState" class="badge">Waiting</div><p id="healthReason" class="subtle">Waiting for telemetry.</p></div>
+    </div>
+  </div>
+
+  <div class="module card">
+    <div class="module-head"><span class="module-icon">♻️</span><div><h2>Second-Life Decision</h2><p>Decision becomes reliable after history is collected.</p></div></div>
+    <div id="secondLife" class="decision">Waiting for sufficient battery history.</div>
+  </div>
+
+  <div class="module card">
+    <div class="module-head"><span class="module-icon">⚠️</span><div><h2>Fault Detection</h2><p>Rule-based live fault screening.</p></div></div>
+    <div id="faults" class="fault-list">No live faults detected yet.</div>
+  </div>
+
+  <div class="module card">
+    <div class="module-head"><span class="module-icon">🛠️</span><div><h2>Predictive Maintenance</h2><p>Suggestions based on observed battery behaviour.</p></div></div>
+    <div id="maintenance" class="suggestions">Waiting for live data.</div>
+  </div>
+</section>
+</main>
+
+<script type="module" src="twin-v2.js"></script><script src="theme.js"></script><script type="module" src="auth-guard.js"></script>
+</body></html>

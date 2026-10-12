@@ -1,0 +1,288 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:#050505;
+color:white;
+padding:40px;
+
+}
+
+/* NAVBAR */
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 50px;
+
+background:#101010;
+
+border-bottom:2px solid #00bfff33;
+
+box-shadow:0 5px 20px rgba(0,191,255,.15);
+
+margin:-40px -40px 40px -40px;
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.logo-icon{
+
+font-size:38px;
+
+}
+
+.logo-text h2{
+
+color:#00bfff;
+
+font-size:28px;
+
+margin:0;
+
+}
+
+.logo-text p{
+
+font-size:12px;
+
+color:#9ecfe5;
+
+margin-top:2px;
+
+}
+
+.nav-links{
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+list-style:none;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#00bfff;
+
+}
+
+.nav-links a.active{
+
+color:#00bfff;
+
+border-bottom:2px solid #00bfff;
+
+padding-bottom:5px;
+
+}
+
+#themeBtn{
+
+background:#00bfff;
+
+color:white;
+
+border:none;
+
+padding:8px 14px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+#themeBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+/* HEADING */
+
+h1{
+
+text-align:center;
+color:#00bfff;
+margin-bottom:40px;
+
+}
+
+/* ABOUT BOX */
+
+.about-box{
+
+width:95%;
+max-width:1000px;
+margin:auto;
+padding:30px;
+background:#181818;
+border-radius:20px;
+box-shadow:0 0 20px #00bfff33;
+
+}
+
+.about-box h2{
+
+color:#00bfff;
+margin-bottom:20px;
+
+}
+
+.about-box p{
+
+line-height:1.8;
+font-size:18px;
+color:#dddddd;
+
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+margin-top:40px;
+
+}
+
+.card{
+
+background:#181818;
+padding:25px;
+border-radius:18px;
+box-shadow:0 0 20px #00bfff22;
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+box-shadow:0 0 30px #00bfff;
+
+}
+
+.card h3{
+
+color:#00bfff;
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.8;
+color:#ddd;
+
+}
+
+/* FOOTER */
+
+footer{
+
+margin-top:50px;
+text-align:center;
+padding:25px;
+background:#111;
+border-radius:20px;
+box-shadow:0 0 20px #00bfff22;
+
+}
+
+footer h3{
+
+color:#00bfff;
+margin-bottom:10px;
+
+}
+
+footer p{
+
+color:#aaaaaa;
+
+}
+@media (max-width:768px){
+
+.main,
+.container,
+.top-cards,
+.grid,
+.ai-grid,
+.iot-grid,
+.pack-grid,
+.health-grid,
+.temp-grid{
+
+grid-template-columns:1fr;
+
+display:grid;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}

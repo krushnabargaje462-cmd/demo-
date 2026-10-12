@@ -1,0 +1,45 @@
+MISSION TITAN — NEW ESP32 38-PIN USB-C CP2102 WIRING
+
+ESP32 board in the supplied photo: ESP32-WROOM-32 / 38-pin style board.
+
+SAFE FIRST TEST
+- New ESP32 alone over USB data cable.
+- Do not connect battery, BMS, INA219 or DS18B20 until Blink upload succeeds.
+
+SENSOR WIRING
+1) INA219
+- VCC -> ESP32 3V3
+- GND -> ESP32 GND
+- SDA -> GPIO21
+- SCL -> GPIO22
+- INA219 VIN+ / VIN- are the current-measurement path; do NOT put the battery negative current path through GND.
+- For pack/load current, use the intended high-side path and verify the exact BMS/load topology before powering it.
+
+2) DS18B20 x2 (shared 1-Wire bus)
+- Sensor VDD -> ESP32 3V3
+- Sensor GND -> ESP32 GND
+- Both DATA pins -> GPIO4
+- One 4.7k resistor from GPIO4/DATA bus -> 3V3
+
+3) JBD DP04S007 UART
+- JBD UART pin 1 GND -> ESP32 GND
+- JBD UART pin 2 RXD -> ESP32 GPIO17 (TX)
+- JBD UART pin 3 TXD -> ESP32 GPIO16 (RX)
+- JBD UART pin 4 VDD/B+ -> DO NOT CONNECT until the exact board/version and required UART logic/power are verified.
+
+4) JBD DP04S007 balance connector J1
+- BC0 -> pack negative / Cell 1 negative
+- BC1 -> Cell 1 positive
+- BC2 -> Cell 2 positive
+- BC3 -> Cell 3 positive
+- BC4 -> Cell 4 positive
+
+5) JBD power terminals
+- B- -> battery pack negative
+- Pack positive -> battery/load/charger positive as specified by the BMS wiring diagram
+- C- -> common negative for charger/load on DP04S007 versions that use C- for charge/discharge negative
+
+IMPORTANT
+- Do not rely on wire colour alone for the balance harness. Verify pin order with the board/model documentation and a meter before connecting the pack.
+- Do not connect the JBD balance connector to ESP32 GPIOs.
+- Do not connect JBD VDD/B+ to ESP32 3V3/5V blindly.

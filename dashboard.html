@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mission Titan | Dashboard</title>
+<link rel="stylesheet" href="common.css"><link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><span class="logo-icon">🔋</span><div class="logo-text"><h2>MISSION TITAN</h2><p>AI Powered Battery Intelligence</p></div></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a class="active" href="dashboard.html">Dashboard</a>
+    <li><a href="battery.html">Battery</a></li><li><a href="twin.html">Digital Twin</a>
+    <li><a href="analytics.html">Analytics</a></li><li><a href="passport.html">Passport</a><li><a href="about.html">About</a>
+  </ul>
+  <div class="live-clock"><span class="clock-icon">◷</span><div class="clock-info"><span class="clock-label">LIVE TIME</span><span id="clock">--:--:--</span></div></div>
+</nav>
+<main class="page">
+  <div class="page-title"><div><h1>Battery Dashboard</h1><p>Live technical telemetry from the physical battery system.</p></div><span id="connection" class="status-dot waiting">Connecting</span></div>
+
+  <div class="grid technical-grid">
+    <div class="card"><h3>Pack Voltage (INA219)</h3><div class="value" id="voltage">--</div></div>
+    <div class="card"><h3>Pack Voltage (BMS)</h3><div class="value" id="bmsVoltage">--</div></div>
+    <div class="card"><h3>Current (INA219)</h3><div class="value" id="current">--</div></div>
+    <div class="card"><h3>Current (BMS)</h3><div class="value" id="bmsCurrent">--</div></div>
+    <div class="card"><h3>Power</h3><div class="value" id="power">--</div></div>
+    <div class="card"><h3>State of Charge</h3><div class="value" id="soc">--</div></div>
+    <div class="card"><h3>Operation</h3><div class="value" id="operation">--</div></div>
+    <div class="card"><h3>Battery Temperature</h3><div class="value" id="batteryTemp">--</div></div>
+    <div class="card"><h3>BMS Temperature</h3><div class="value" id="bmsTemp">--</div></div>
+    <div class="card"><h3>JBD Temperature</h3><div class="value" id="jbdTemp">--</div></div>
+    <div class="card"><h3>Charge Cycles</h3><div class="value" id="cycles">--</div></div>
+    <div class="card"><h3>FET Status</h3><div class="value" id="fetStatus">--</div></div>
+  </div>
+
+  <div class="section grid" style="grid-template-columns:2fr 1fr">
+    <div class="card">
+      <div class="section-title">Cell-Level Telemetry</div>
+      <div class="grid cell-grid" id="cells"></div>
+    </div>
+    <div class="card">
+      <div class="section-title">Protection & Balance</div>
+      <p>Minimum Cell <strong id="min">--</strong></p>
+      <p>Maximum Cell <strong id="max">--</strong></p>
+      <p>Cell Difference <strong id="cellDiff">--</strong></p>
+      <p>Protection <strong id="protection">--</strong></p>
+      <p>BMS <strong id="bmsStatus">--</strong></p>
+    </div>
+  </div>
+
+  <div class="section card">
+    <div class="section-title">Technical Status</div>
+    <div id="alert" class="empty">Waiting for live telemetry.</div>
+  </div>
+
+</main>
+<script type="module" src="dashboard-v2.js"></script><script src="theme.js"></script><script type="module" src="auth-guard.js"></script>
+</body></html>

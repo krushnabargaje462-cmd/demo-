@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mission Titan | Secure Access</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- Background glow -->
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+
+        <div class="login-container">
+
+            <!-- Left branding -->
+            <div class="brand-panel">
+
+                <div class="brand-icon">
+                    🔋
+                </div>
+
+                <h1>MISSION <span>TITAN</span></h1>
+
+                <p class="tagline">
+                    Intelligent Battery Health Monitoring
+                </p>
+
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE
+                </div>
+
+                <div class="battery-mini">
+
+                    <div class="battery-head"></div>
+
+                    <div class="battery-body">
+                        <div class="battery-level"></div>
+                    </div>
+
+                </div>
+
+                <p class="battery-info">
+                    4S LiFePO₄ • Digital Twin
+                </p>
+
+            </div>
+
+
+            <!-- Login card -->
+            <div class="login-card">
+
+                <div class="login-header">
+
+                    <p class="welcome">
+                        Welcome back
+                    </p>
+
+                    <h2>Secure Access</h2>
+
+                    <p>
+                        Sign in to access Mission Titan
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                       <label for="userId">
+    EMAIL / USER ID
+</label>
+
+                        <div class="input-box">
+
+                            <span>👤</span>
+
+                            <input
+                                type="text"
+                                id="userId"
+                                placeholder="Enter your User ID"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <span>🔐</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="showPassword"
+                                class="eye-btn"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="#">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+
+                        <span>Sign In</span>
+
+                        <span>→</span>
+
+                    </button>
+
+
+                    <p
+                        id="loginMessage"
+                        class="login-message"
+                    ></p>
+
+                </form>
+
+
+                <div class="security-note">
+
+                    🔒 Protected Mission Titan environment
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+
+            Mission Titan • Battery Intelligence Platform
+
+        </footer>
+
+    </div>
+
+
+    <script type="module" src="login.js"></script>
+
+</body>
+</html>
